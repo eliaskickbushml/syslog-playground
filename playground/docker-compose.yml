@@ -1,0 +1,18 @@
+version: "3"
+services:
+  syslog:
+    build: ./syslog-logging
+    ports:
+      - "5140:514/tcp"
+      - "5140:514/udp"
+    volumes:
+      - ./syslog-logging/syslog-logs:/var/log/syslog-logs
+    tty: true
+  logger-app:
+    build: ./logger-app
+    ports:
+      - "5141:5141"
+  redis:
+    build: ./redis
+    ports:
+      - "5142:6379"

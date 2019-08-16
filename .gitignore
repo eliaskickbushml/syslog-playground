@@ -3,4 +3,4 @@ lib
 include
 pyvenv.cfg
 .idea
-syslog-logs/*
+syslog-logging/syslog-logs/*
